@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
+import { NoteCard } from '../ui';
 
 @Component({
     selector:'notes-container',
+    directives: [
+        NoteCard
+        ],
     styles : [`
             .notes {
         padding-top: 50px;
@@ -18,11 +22,18 @@ import { Component } from '@angular/core';
       </div>
       <div class="notes col-xs-8">
         <div class="row between-xs">
-            notes card here
+            <note-card [note]="note" ></note-card>   
         </div>
       </div>
     </div>
     `
 })
 
-export class Notes {};
+export class Notes {
+    note = {
+        title : "New Note",
+        value : "Note Here Blablablaba"
+    }
+
+
+};
