@@ -1,26 +1,33 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter} from '@angular/core';
 @Component({
     selector: 'note-creator',
     template: `
     <div class="note-creator shadow-2">
-    <pre> {{ newNote | json}}</pre>
-      <form class="row">
+   <!-- <pre> {{ newNote | json}}</pre> -->
+      <form class="row"
+      (submit)="onCreateNote()"
+      >
         <input
           type="text"
           [(ngModel)]="newNote.title"
           name="newNoteTitle"
           placeholder="Title"
           class="col-xs-10 title"
+          *ngIf="fullForm"
         >
         <input
           type="text"
+          (focus)="toogle(true)"
           [(ngModel)]="newNote.value"
 
           name="newNoteValue"
           placeholder="Take a note..."
           class="col-xs-10"
         >
-        <div class="actions col-xs-12 row between-xs">
+        <div 
+        class="actions col-xs-12 row between-xs"
+        *ngIf="fullForm"
+        >
           <button
             type="submit"
             class="btn-light"
@@ -52,9 +59,33 @@ import { Component } from '@angular/core';
 
 export class NoteCreator {
 
-newNote = {
+    @Output() createNote= new EventEmitter();
+    newNote = {
     title:"",
     value: ""
-};
+    };
+    fullForm:boolean= false;
+
+onCreateNote(){
+    console.log("Submitted");
+    const {title, value}= this.newNote;
+
+    if(title && value){
+        this.createNote.emit({title,value});
+        this.reset();
+    }
+}
+
+reset(){
+    this.newNote = {
+        title:"",
+        value: ""
+    };
+
+}
+
+toogle(value:boolean){
+    this.fullForm = value;
+}
 
 }

@@ -13,6 +13,7 @@ import {
         border-radius: 2px;
         width: 100%;
         position: relative;
+        margin: 2%
         }
         .title {
         font-size: 1.2rem;
