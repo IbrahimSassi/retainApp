@@ -7,7 +7,7 @@ import { ColorPicker } from './color-picker';
     <div class="note-creator shadow-2" 
     [ngStyle]="{'background-color':newNote.color}"
     >
-   <!-- <pre> {{ newNote | json}}</pre> -->
+    <!-- <pre> {{ newNote | json}}</pre> -->
       <form class="row"
       (submit)="onCreateNote()"
       >
