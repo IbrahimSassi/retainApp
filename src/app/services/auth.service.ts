@@ -8,7 +8,7 @@ import 'rxjs/Rx';
 @Injectable()
 
 export class AuthService implements CanActivate {
-    JWT_KET:string = 'retain_toker';
+    JWT_KET:string = 'retain_token';
     constructor(
         private router:Router,
         private apiService:ApiService,
