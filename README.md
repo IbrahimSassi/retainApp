@@ -11,5 +11,6 @@
 - open browser to [`http://localhost:3000`](http://localhost:3000)
 
 
-Developed By : http://ibrahimsassi.me
+Developed By : [Ibrahim Sassi][1] 
 =====================================
+[1]: http://ibrahimsassi.me
