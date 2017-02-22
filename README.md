@@ -9,3 +9,7 @@
 - run `npm install`
 - run `npm start` to fire up dev server
 - open browser to [`http://localhost:3000`](http://localhost:3000)
+
+
+Developed By : http://ibrahimsassi.me
+=====================================
